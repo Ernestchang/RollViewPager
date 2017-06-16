@@ -7,25 +7,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.jude.rollviewpager.RollPagerView;
-import com.jude.rollviewpager.adapter.LoopPagerAdapter;
+import com.jude.rollviewpagerdome.vertical.LoopVerticalPagerAdapter;
+import com.jude.rollviewpagerdome.vertical.RollVerticalPagerView;
 
 /**
  * Created by zhuchenxi on 2016/12/13.
  */
 
 public class LoopActivity extends AppCompatActivity {
-    private RollPagerView mViewPager;
+    private RollVerticalPagerView mViewPager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple);
-        mViewPager = (RollPagerView) findViewById(R.id.view_pager);
+        setContentView(R.layout.activity_vertical);
+        mViewPager = (RollVerticalPagerView) findViewById(R.id.view_pager);
         mViewPager.setAdapter(new ImageLoopAdapter(mViewPager));
     }
 
-    private class ImageLoopAdapter extends LoopPagerAdapter {
+    private class ImageLoopAdapter extends LoopVerticalPagerAdapter {
         int[] imgs = new int[]{
                 R.drawable.img1,
                 R.drawable.img2,
@@ -34,7 +34,7 @@ public class LoopActivity extends AppCompatActivity {
                 R.drawable.img5,
         };
 
-        public ImageLoopAdapter(RollPagerView viewPager) {
+        public ImageLoopAdapter(RollVerticalPagerView viewPager) {
             super(viewPager);
         }
 
